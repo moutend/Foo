@@ -1,0 +1,12 @@
+[submodule "lib/cppaudio"]
+	path = lib/cppaudio
+	url = https://github.com/moutend/cppaudio
+[submodule "lib/cpplogger"]
+	path = lib/cpplogger
+	url = https://github.com/moutend/cpplogger
+[submodule "lib/IAudioServer"]
+	path = lib/IAudioServer
+	url = https://github.com/moutend/IAudioServer
+[submodule "lib/IFoo"]
+	path = lib/IFoo
+	url = https://github.com/moutend/IFoo
