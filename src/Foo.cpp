@@ -23,39 +23,10 @@ CFoo::CFoo() : mReferenceCount(1), mTypeInfo(nullptr) {
     pTypeLib->GetTypeInfoOfGuid(IID_IFoo, &mTypeInfo);
     pTypeLib->Release();
   }
-
-  mVoiceInfoCtx = new VoiceInfoContext();
-
-  mVoiceInfoThread = CreateThread(
-      nullptr, 0, voiceInfo, static_cast<void *>(mVoiceInfoCtx), 0, nullptr);
-
-  if (mVoiceInfoThread == nullptr) {
-    return;
-  }
-
-  WaitForSingleObject(mVoiceInfoThread, INFINITE);
-  SafeCloseHandle(&mVoiceInfoThread);
 }
 
 CFoo::~CFoo() {
   LockModule(false);
-
-  for (unsigned int i = 0; i < mVoiceInfoCtx->Count; i++) {
-    delete[] mVoiceInfoCtx->VoiceProperties[i]->Id;
-    mVoiceInfoCtx->VoiceProperties[i]->Id = nullptr;
-
-    delete[] mVoiceInfoCtx->VoiceProperties[i]->DisplayName;
-    mVoiceInfoCtx->VoiceProperties[i]->DisplayName = nullptr;
-
-    delete[] mVoiceInfoCtx->VoiceProperties[i]->Language;
-    mVoiceInfoCtx->VoiceProperties[i]->Language = nullptr;
-  }
-
-  delete[] mVoiceInfoCtx->VoiceProperties;
-  mVoiceInfoCtx->VoiceProperties = nullptr;
-
-  delete mVoiceInfoCtx;
-  mVoiceInfoCtx = nullptr;
 }
 
 STDMETHODIMP CFoo::QueryInterface(REFIID riid, void **ppvObject) {
