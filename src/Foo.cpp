@@ -102,7 +102,7 @@ STDMETHODIMP CFoo::Start() { return E_NOTIMPL; }
 
 STDMETHODIMP CFoo::Stop() { return E_NOTIMPL; }
 
-STDMETHODIMP CFoo::SetUIEventHandler(UIEventHandler handleFunc) {
+STDMETHODIMP CFoo::SetUIEventHandler(UIEventHandler uiEventHandler) {
   return E_NOTIMPL;
 }
 

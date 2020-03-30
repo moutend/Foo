@@ -23,7 +23,7 @@ public:
   // IFoo methods
   STDMETHODIMP Start();
   STDMETHODIMP Stop();
-  STDMETHODIMP SetUIEventHandler(UIEventHandler handleFunc);
+  STDMETHODIMP SetUIEventHandler(UIEventHandler uiEventHandler);
 
   CFoo();
   ~CFoo();
