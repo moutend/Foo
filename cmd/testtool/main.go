@@ -20,7 +20,7 @@ func main() {
 }
 
 func run(args []string) error {
-	if err := ole.CoInitializeEx(0, ole.COINIT_MULTITHREADED); err != nil {
+	if err := ole.CoInitializeEx(0, ole.COINIT_APARTMENTTHREADED); err != nil {
 		return err
 	}
 	defer ole.CoUninitialize()
