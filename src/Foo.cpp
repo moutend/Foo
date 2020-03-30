@@ -102,9 +102,9 @@ STDMETHODIMP CFoo::Start() { return E_NOTIMPL; }
 
 STDMETHODIMP CFoo::Stop() { return E_NOTIMPL; }
 
-// STDMETHODIMP CFoo::SetUIEventHandler(UIEventHandler handler) {
-//   return E_NOTIMPL;
-// }
+STDMETHODIMP CFoo::SetUIEventHandler(UIEventHandler handleFunc) {
+  return E_NOTIMPL;
+}
 
 // CFooFactory
 STDMETHODIMP CFooFactory::QueryInterface(REFIID riid, void **ppvObject) {
